@@ -1,27 +1,40 @@
-# Mini-project IV
+# Mini-project IV: Loan Approval Model with Deployment
 
 ### [Assignment](assignment.md)
 
 ## Project/Goals
-(fill in your description and goals here)
+Create a model that accurately mimics loan application judgements and deploy it with flask.
 
 ## Hypothesis
-(fill in your hypothesis about which subset of applicants will be most likely to have their loan approved, and why. Give some examples of how you will test this hypothesis)
+If loan approval depends on an applicants ability to repay the loan then the most important features will be combined applicant income and credit history. 
 
 ## EDA 
-(fill in what you discovered in your exploration of the dataset)
+EDA revealed a few important characteristics in the dataset:
+- Target variable: 69% of loans were approved
+- Income was low (7k) and was heavily right-skewed. 
+- Loan amount was slightly right-skewed, but near-normal upon logorithmic transformation. 
+- No features were highly correlated with the target variable or each other.  Only semi-urban property areas and having exactly 2 dependents were slightly positively correlated. 
 
 
 ## Process
-(fill in what you did during EDA, cleaning, feature engineering, modeling, deployment, testing)
-### (your step 1)
-### (your step 2)
+1. Hypothesis Generation
+2. EDA (explore, clean, and wrangle)
+3. Build Predictive Models
+4. Create a Pipeline for best model (RFC)
+5. Deploy Model
 
 ## Results/Demo
-(fill in your model's performance, details about the API you created, and (optional) a link to an live demo)
+A Random Forest Classifier hyperparameterized with gridsearch CV was put into a pipeline and performed as follows: 
+77%  Accuracy
+81%  Precision
+68%  Recall
+69%  F1
+
+
 
 ## Challanges 
-(discuss challenges you faced in the project)
+Deploying the project was the largest challenge.  Followed by throttling my model to fit my CPU. 
 
 ## Future Goals
-(what would you do if you had more time? are there any potential issues/biases with your model/use case?)
+- Improve the API
+- Improve feature engineering and class imbalance
